@@ -10,8 +10,9 @@ public class TodoController : Controller {
     public TodoController(TodoContext context) => _context = context;
 
     public IActionResult Index() {
-        var todo = _context.Todos.First();
-        return View(todo);
+        ViewData["Title"] = "To Do List";
+        var todos = _context.Todos.ToList();
+        return View(todos);
     }
     
 }
