@@ -1,0 +1,9 @@
+@model To_Do.Models.Todo
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Are you sure you want to delete the task <strong>@Model.Title</stong>?</p>
+<form method="POST">
+    <button class="btn btn-danger" type="submit">Delete</button>
+    <a asp-controller="Todo" asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>

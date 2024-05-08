@@ -29,14 +29,21 @@
                     <td>
                         <a class="btn btn-success btn-sm">Finish</a>
                         <a 
-                            asp-asp-controller="Todo" 
+                            asp-controller="Todo" 
                             asp-action="Edit" 
                             asp-route-id="@todo.Id" 
                             class="btn btn-warning btn-sm"
                         >
                             Edit
                         </a>
-                        <a class="btn btn-danger btn-sm">Delete</a>
+                        <a
+                            asp-controller="Todo"
+                            asp-action="Delete"
+                            asp-route-id="@todo.Id"
+                            class="btn btn-danger btn-sm"
+                        >
+                            Delete
+                        </a>
                     </td>
                 </tr>
             }
