@@ -26,7 +26,23 @@ public class TodoController : Controller {
     [HttpPost]
     public IActionResult Create(Todo todo)
     {
+        todo.CreatedAt = DateTime.Now;
         _context.Todos.Add(todo);
+        _context.SaveChanges();
+        return RedirectToAction(nameof(Index));
+    }
+
+    public IActionResult Edit(int id) 
+    {
+        ViewData["Title"] = "Edit Task";
+        var todo = _context.Todos.Find(id);
+        return View("Form", todo);
+    }
+
+    [HttpPost]
+    public IActionResult Edit(Todo todo)
+    {
+        _context.Todos.Update(todo);
         _context.SaveChanges();
         return RedirectToAction(nameof(Index));
     }
