@@ -1,0 +1,17 @@
+@model To_Do.Models.Todo
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="POST">
+    <div class="mb-3">
+        <label asp-for="Title">Title</label>
+        <input asp-for="Title" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DeadLine">DeadLine</label>
+        <input asp-for="DeadLine" type="date" class="form-control">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Salvar</button>
+</form>
