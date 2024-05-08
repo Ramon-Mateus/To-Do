@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<TodoContext>();
+builder.Services.AddDbContext<TodoContext>(); // Isso injeta o contexto nos construtores dos controllers que pedir
 
 var app = builder.Build();
 
